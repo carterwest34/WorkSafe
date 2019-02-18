@@ -97,11 +97,10 @@
 		056740722216004B005FE64B /* WorkSafe */ = {
 			isa = PBXGroup;
 			children = (
+				057EEE2C221B4B4100CC0F47 /* viewControllers */,
+				057EEE2B221B4B0100CC0F47 /* storyboard */,
 				056740732216004B005FE64B /* AppDelegate.swift */,
-				056740752216004B005FE64B /* ViewController.swift */,
-				056740772216004B005FE64B /* Main.storyboard */,
 				0567407A2216004C005FE64B /* Assets.xcassets */,
-				0567407C2216004C005FE64B /* LaunchScreen.storyboard */,
 				0567407F2216004C005FE64B /* Info.plist */,
 			);
 			path = WorkSafe;
@@ -123,6 +122,23 @@
 				056740952216004C005FE64B /* Info.plist */,
 			);
 			path = WorkSafeUITests;
+			sourceTree = "<group>";
+		};
+		057EEE2B221B4B0100CC0F47 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				056740772216004B005FE64B /* Main.storyboard */,
+				0567407C2216004C005FE64B /* LaunchScreen.storyboard */,
+			);
+			name = storyboard;
+			sourceTree = "<group>";
+		};
+		057EEE2C221B4B4100CC0F47 /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				056740752216004B005FE64B /* ViewController.swift */,
+			);
+			name = viewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
