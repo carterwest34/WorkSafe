@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         let layer = CAGradientLayer()
         layer.frame = view.bounds
         layer.colors = [pineColor.cgColor, teaColor.cgColor]
-        view.layer.addSublayer(layer)
+        view.layer.insertSublayer(layer, at: 0)
     }
     @IBOutlet weak var username_text: UITextField!
     @IBOutlet weak var password_text: UITextField!
