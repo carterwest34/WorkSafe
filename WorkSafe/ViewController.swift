@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,15 +19,33 @@ class ViewController: UIViewController {
         layer.frame = view.bounds
         layer.colors = [pineColor.cgColor, teaColor.cgColor]
         view.layer.insertSublayer(layer, at: 0)
-    }
-    @IBOutlet weak var username_text: UITextField!
-    @IBOutlet weak var password_text: UITextField!
-    @IBAction func Enter_tapped(_ sender: Any) {
-        
-    }
-    @IBAction func setup_tapped(_ sender: Any) {
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
-
+    //MARK Variables
+    var adminUsername = "adminUsername"
+    var adminPassword = "adminPassword"
+    var facultyUsername = "facultyUsername"
+    var facultyPassword = "facultyPassword"
+    
+    //MARK IBOutlets
+    @IBOutlet weak var username_text: UITextField!
+    @IBOutlet weak var password_text: UITextField!
+    @IBOutlet weak var userSegmentedController: UISegmentedControl!
+    
+    
+    //MARK IBActions
+    @IBAction func Enter_tapped(_ sender: Any) {
+        if userSegmentedController.tag == 1 {
+            if username_text.text != "facultyUsername" || password_text.text != "facultyPassword" {
+                let loginErrorAlert = UIAlertController(title: "Login Error", message: "Either your username or password was incorrect. Please try again.", preferredStyle: .alert)
+                let loginErrorAction = UIAlertAction(title: "Ok", style: .destructive)
+                loginErrorAlert.addAction(loginErrorAction)
+                self.present(loginErrorAlert, animated: true, completion: nil)
+            } else if username_text.text == "facultyUsername" && password_text.text == "facultyPassword" {
+                performSegue(withIdentifier: "loginToFacultyHomeScreen", sender: self)
+            }
+        }
+    }
 }
 
