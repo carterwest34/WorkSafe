@@ -17,7 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="cAm-az-bTR">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="haT-m7-Y5V"/>
+                                    <constraint firstAttribute="width" constant="100" id="xbf-gi-ktg"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="0.052288018169999999" green="0.66607838870000002" blue="0.46765553949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cAm-az-bTR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ACz-Sz-Fgr"/>
+                            <constraint firstItem="cAm-az-bTR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="j9m-Hi-JNM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
