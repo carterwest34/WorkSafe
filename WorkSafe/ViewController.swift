@@ -21,8 +21,6 @@ class ViewController: UIViewController {
         layer.colors = [pineColor.cgColor, teaColor.cgColor]
         view.layer.insertSublayer(layer, at: 0)
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
-        self.navigationController!.navigationBar.isHidden = true
-
     }
     
     //MARK Variables
@@ -48,7 +46,6 @@ class ViewController: UIViewController {
             } else if username_text.text == "facultyUsername" && password_text.text == "facultyPassword" {
                 performSegue(withIdentifier: "loginToFacultyHomeScreen", sender: self)
                 self.navigationController!.navigationBar.isHidden = false
-                
             }
         }
     }
