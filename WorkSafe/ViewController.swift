@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //Creating a color gradient for the background color of the login screen
         let pineColor = UIColor(red: 0/255, green:165/255, blue:114/255, alpha: 1.0)
         let teaColor = UIColor(displayP3Red: 208/255, green: 240/255, blue: 192/255, alpha: 1.0)
         let layer = CAGradientLayer()
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
         layer.colors = [pineColor.cgColor, teaColor.cgColor]
         view.layer.insertSublayer(layer, at: 0)
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        self.navigationController!.navigationBar.isHidden = true
+
     }
     
     //MARK Variables
@@ -44,6 +47,8 @@ class ViewController: UIViewController {
                 self.present(loginErrorAlert, animated: true, completion: nil)
             } else if username_text.text == "facultyUsername" && password_text.text == "facultyPassword" {
                 performSegue(withIdentifier: "loginToFacultyHomeScreen", sender: self)
+                self.navigationController!.navigationBar.isHidden = false
+                
             }
         }
     }
